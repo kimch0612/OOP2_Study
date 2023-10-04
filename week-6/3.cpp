@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-class Rectangle{
+class Rectangle
+{
 public:
     int width, height;
     int getArea();
