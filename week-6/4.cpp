@@ -1,3 +1,4 @@
+/*내가 그냥 심심해서 끄적인 코드임*/
 #include <iostream>
 using namespace std;
 
