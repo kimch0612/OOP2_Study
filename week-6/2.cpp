@@ -13,4 +13,9 @@ int main(void)
     donut.radius = 1;
     double area = donut.getArea();
     cout << area << endl;
+
+    Circle pizza;
+    pizza.radius = 30;
+    area = pizza.getArea();
+    cout << area << endl;
 }
