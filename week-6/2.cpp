@@ -7,15 +7,20 @@ double Circle:: getArea()
     return 3.14 * radius * radius;
 }
 
+void Circle:: get(int r)
+{
+    radius = r;
+}
+
 int main(void)
 {
     Circle donut;
-    donut.radius = 1;
+    donut.get(1);
     double area = donut.getArea();
     cout << area << endl;
 
     Circle pizza;
-    pizza.radius = 30;
+    pizza.get(30);
     area = pizza.getArea();
     cout << area << endl;
 }
