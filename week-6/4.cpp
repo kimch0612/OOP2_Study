@@ -6,9 +6,9 @@ class Circle
 {
     double Radius;
 public:
+    void get_Radius(int num);
     double Circle_Area()
     {
-        void get_Radius(int num);
         return (3.14 * Radius * Radius);
     }
 };
