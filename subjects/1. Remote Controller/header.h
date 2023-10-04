@@ -4,16 +4,15 @@
 using namespace std;
 class TV
 {
-    bool on;
+    bool power = false;
     int channel = 0, volume = 0;
 public:
-    void powerOn();
-    void powerOff();
-    void upChannel();
-    void downChannel();
-    void setChannel();
-    void upVolume();
-    void downVolume();
-    void setVolume();
+    int power_controll();
+    int upChannel();
+    int downChannel();
+    int setChannel(int num);
+    int upVolume();
+    int downVolume();
+    int setVolume(int num);
 };
 #endif

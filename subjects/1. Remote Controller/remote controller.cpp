@@ -1,47 +1,68 @@
 #include "header.h"
 
-void TV:: powerOn()
+int TV:: power_controll()
 {
-
+    if (power == false)
+        power = true;
+    else
+        power = false;
 }
 
-void TV:: powerOff()
+int TV:: upChannel()
 {
-
+    if (channel == 100)
+        return (1);
+    else
+        channel++;
+        return (0);
 }
 
-void TV:: upChannel()
+int TV:: downChannel()
 {
-
+    if (channel == 0)
+        return (1);
+    else
+        channel--;
+        return (0);
 }
 
-void TV:: downChannel()
+int TV:: setChannel(int num)
 {
-
+    if (num > 100 || num < 0)
+        return (1);
+    else
+        channel = num;
 }
 
-void TV:: setChannel()
+int TV:: upVolume()
 {
-
+    if (volume == 100)
+        return (1);
+    else
+        volume++;
+        return (0);
 }
 
-void TV:: upVolume()
+int TV:: downVolume()
 {
-
+    if (volume == 0)
+        return (1);
+    else
+        volume--;
+        return (0);
 }
 
-void TV:: downVolume()
+int TV:: setVolume(int num)
 {
-
-}
-
-void TV:: setVolume()
-{
-
+    if (num > 100 || num < 0)
+        return (1);
+    else
+        volume = num;
 }
 
 int main(void)
 {
+    TV samsung;
     while (1)
     {
         continue;
