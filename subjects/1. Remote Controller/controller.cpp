@@ -13,5 +13,6 @@ int main(void)
         cout << "(도움말은 --help를 입력하세요)" << endl;
         cout << "> ";
         cin >> task;
+        
     }
 }
