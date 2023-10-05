@@ -24,7 +24,7 @@ void status_whitespace(TV tv, int flag)
     switch(flag)
     {
         case 0:
-            if (tv.get_status(0) == 0)
+            if (tv.get_status(0) == 1)
                 tmp = "On";
             else
                 tmp = "Off";
