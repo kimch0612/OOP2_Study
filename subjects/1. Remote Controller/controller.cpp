@@ -1,7 +1,7 @@
 #include "header.h"
 
 string device;
-int tmp;
+string task;
 
 int main(void)
 {
