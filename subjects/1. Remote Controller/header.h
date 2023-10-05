@@ -1,6 +1,7 @@
 #ifndef HEADER_H
 #define HEADER_H
 #include <iostream>
+#include <string>
 using namespace std;
 class TV
 {
@@ -15,4 +16,6 @@ public:
     int downVolume();
     int setVolume(int num);
 };
+void ft_whitespaces(string device);
+void print_screen(string device);
 #endif

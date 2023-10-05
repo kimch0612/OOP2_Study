@@ -1,5 +1,7 @@
 #include "header.h"
 
+string device;
+
 int TV:: power_controll()
 {
     if (power == false)
@@ -62,9 +64,23 @@ int TV:: setVolume(int num)
 
 int main(void)
 {
-    TV samsung;
-    while (1)
-    {
-        continue;
-    }
+    cout << "사용할 TV: ";
+    cin >> device;
+    print_screen(device);
+    // int task = 0;
+    // TV samsung;
+    // while (1)
+    // {
+    //     cout << "---------------------------------------" << endl;
+    //     cout << "-          Remote Controller          -" << endl;
+    //     cout << "-         device name: samsung         -" << endl;
+    //     cout << "-                                     -" << endl;
+    //     cout << "-                                     -" << endl;
+    //     cin >> task;
+    //     switch(task)
+    //     {
+    //         case(10): break;
+    //     }
+    //     continue;
+    // }
 }
