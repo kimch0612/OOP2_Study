@@ -1,18 +1,19 @@
 #include "header.h"
 
-void ft_whitespaces(string device)
+void title_whitespace(string device)
 {
+    string title("device name: ");
     cout << '-';
-    int i, index = -1, size, flag = 1;
+    int i, index = -1, size;
     size = 24 - device.size();
-    for (i=0; i <= 37 - (13 + device.size()); i++)
+    for (i=0; i <= 37 - (title.size() + device.size()); i++)
     {
         if (i <= size/2 - 1)
             cout << " ";
         else if (i >= size/2 + 1)
             cout << " ";
         else
-            cout << "device name: " << device;
+            cout << title << device;
     }
     cout << '-' << endl;
 }
@@ -23,5 +24,5 @@ void print_screen(string device)
     string title("-          Remote Controller          -");
     cout << line << endl;
     cout << title << endl;
-    ft_whitespaces(device);
+    title_whitespace(device);
 }

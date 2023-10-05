@@ -16,6 +16,6 @@ public:
     int downVolume();
     int setVolume(int num);
 };
-void ft_whitespaces(string device);
+void title_whitespace(string device);
 void print_screen(string device);
 #endif
