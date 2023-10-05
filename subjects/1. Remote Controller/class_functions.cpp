@@ -14,6 +14,7 @@ int TV:: get_status(int flag)
             return volume;
             break;
     }
+    return (0);
 }
 
 int TV:: power_controll()

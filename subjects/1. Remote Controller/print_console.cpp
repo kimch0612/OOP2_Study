@@ -8,9 +8,7 @@ void title_whitespace(string device)
     size = 24 - device.size();
     for (i=0; i <= 37 - (title.size() + device.size()); i++)
     {
-        if (i <= size/2 - 1)
-            cout << " ";
-        else if (i >= size/2 + 1)
+        if (i <= size/2 - 1 || i >= size/2 + 1)
             cout << " ";
         else
             cout << title << device;
@@ -18,32 +16,38 @@ void title_whitespace(string device)
     cout << '-' << endl;
 }
 
-void status_whitespace(int flag)
+void status_whitespace(TV tv, int flag)
 {
-    int i;
+    cout << '-';
+    int i, size;
     string tmp;
     switch(flag)
     {
         case 0:
-            if (tv.get_status(0) == 1)
+            if (tv.get_status(0) == 0)
                 tmp = "On";
             else
                 tmp = "Off";
+            size = 37 - tmp.size();
             for (i=0; i <= 37 - tmp.size(); i++)
             {
-
+                if (i <= size/2 - 1 || i >= size/2 + 1)
+                    cout << " ";
+                else
+                    cout << tmp;
             }
     }
+    cout << '-' << endl;
 }
 
-void print_screen(string device)
+void print_screen(TV tv, string device)
 {
     cout << "---------------------------------------" << endl;
     cout << "-          Remote Controller          -" << endl;
     title_whitespace(device);
     cout << "-                                     -" << endl;
     cout << "-                  P                  -" << endl;
-    status_whitespace(0);
+    status_whitespace(tv, 0);
     cout << "-                                     -" << endl;
     cout << "-    C                           V    -" << endl;
     cout << "-                                     -" << endl;

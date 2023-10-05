@@ -1,15 +1,15 @@
 #include "header.h"
 
-string device;
-string task;
-
 int main(void)
 {
-    cout << "사용할 TV: ";
+    TV tv;
+    string device, task;
+
+    cout << "사용할 TV의 제조사: ";
     cin >> device;
     while (1)
     {
-        print_screen(device);
+        print_screen(tv, device);
         cout << "(도움말은 --help를 입력하세요)" << endl;
         cout << "> ";
         cin >> task;

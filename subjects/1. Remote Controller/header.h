@@ -17,6 +17,5 @@ public:
     int downVolume();
     int setVolume(int num);
 };
-TV tv;
-void print_screen(string device);
+void print_screen(TV tv, string device);
 #endif
