@@ -9,7 +9,7 @@ class TV
     int channel = 0, volume = 0;
 public:
     int get_status(int flag);
-    int power_controll();
+    void power_controll();
     int upChannel();
     int downChannel();
     int setChannel(int num);
@@ -18,4 +18,5 @@ public:
     int setVolume(int num);
 };
 void print_screen(TV tv, string device);
+int task_gate(TV& tv, string task);
 #endif

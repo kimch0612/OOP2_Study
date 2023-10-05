@@ -17,18 +17,12 @@ int TV:: get_status(int flag)
     return (0);
 }
 
-int TV:: power_controll()
+void TV:: power_controll()
 {
     if (power == false)
-    {
         power = true;
-        return (1);
-    }
     else
-    {
         power = false;
-        return (0);
-    }
 }
 
 int TV:: upChannel()
@@ -83,4 +77,17 @@ int TV:: setVolume(int num)
     else
         volume = num;
     return (0);
+}
+
+int task_gate(TV& tv, string task)
+{
+    if (task.find("--help") != string::npos)
+    {
+        cout << "도움말입니다." << endl;
+    }
+    else if (task.find("P") != string::npos)
+    {
+        cout << "전원을 컨트롤합니다." << endl;
+        tv.power_controll();
+    }
 }
