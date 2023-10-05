@@ -1,12 +1,33 @@
 #include "header.h"
 
+int TV:: get_status(int flag)
+{
+    switch(flag)
+    {
+        case 0:
+            return power;
+            break;
+        case 1:
+            return channel;
+            break;
+        case 2:
+            return volume;
+            break;
+    }
+}
+
 int TV:: power_controll()
 {
     if (power == false)
+    {
         power = true;
+        return (1);
+    }
     else
+    {
         power = false;
-    return (0);
+        return (0);
+    }
 }
 
 int TV:: upChannel()

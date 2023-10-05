@@ -8,6 +8,7 @@ class TV
     bool power = false;
     int channel = 0, volume = 0;
 public:
+    int get_status(int flag);
     int power_controll();
     int upChannel();
     int downChannel();
@@ -16,6 +17,6 @@ public:
     int downVolume();
     int setVolume(int num);
 };
-void title_whitespace(string device);
+TV tv;
 void print_screen(string device);
 #endif

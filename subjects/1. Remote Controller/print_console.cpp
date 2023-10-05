@@ -18,6 +18,24 @@ void title_whitespace(string device)
     cout << '-' << endl;
 }
 
+void status_whitespace(int flag)
+{
+    int i;
+    string tmp;
+    switch(flag)
+    {
+        case 0:
+            if (tv.get_status(0) == 1)
+                tmp = "On";
+            else
+                tmp = "Off";
+            for (i=0; i <= 37 - tmp.size(); i++)
+            {
+
+            }
+    }
+}
+
 void print_screen(string device)
 {
     cout << "---------------------------------------" << endl;
@@ -25,7 +43,7 @@ void print_screen(string device)
     title_whitespace(device);
     cout << "-                                     -" << endl;
     cout << "-                  P                  -" << endl;
-    cout << "-                                     -" << endl;
+    status_whitespace(0);
     cout << "-                                     -" << endl;
     cout << "-    C                           V    -" << endl;
     cout << "-                                     -" << endl;

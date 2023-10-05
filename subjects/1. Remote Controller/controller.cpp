@@ -12,6 +12,6 @@ int main(void)
         print_screen(device);
         cout << "(도움말은 --help를 입력하세요)" << endl;
         cout << "> ";
-        cin >> tmp;
+        cin >> task;
     }
 }
