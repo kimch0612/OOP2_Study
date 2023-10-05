@@ -9,11 +9,11 @@ int main(void)
     cin >> device;
     while (1)
     {
-        cout << tv.get_status(0) << endl;
+        cout << tv.get_status(1) << endl;
         print_screen(tv, device);
         cout << "(도움말은 --help를 입력하세요)" << endl;
         cout << "> ";
-        cin >> task;
+        getline(cin,task);
         task_gate(tv, task);
     }
 }

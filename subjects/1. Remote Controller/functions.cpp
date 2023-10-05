@@ -85,9 +85,19 @@ int task_gate(TV& tv, string task)
     {
         cout << "도움말입니다." << endl;
     }
-    else if (task.find("P") != string::npos)
-    {
-        cout << "전원을 컨트롤합니다." << endl;
+    else if (task == "P" || task == "p")
         tv.power_controll();
+    else if (task.find("C") != string::npos || task.find("c") != string::npos)
+    {
+        if (task.find("UP") != string::npos || task.find("up") != string::npos)
+        {
+            if (tv.upChannel() == 1)
+                cout << "Channel이 MAX입니다." << endl;
+        }
+        else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
+        {
+            if (tv.downChannel() == 1)
+                cout << "Channel이 MIN입니다." << endl;
+        }
     }
 }
