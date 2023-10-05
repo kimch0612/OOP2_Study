@@ -2,7 +2,7 @@
 
 void title_whitespace(string device)
 {
-    string title("device name: ");
+    string title("Device name: ");
     cout << '-';
     int i, index = -1, size;
     size = 24 - device.size();

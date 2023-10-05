@@ -8,6 +8,7 @@ int TV:: power_controll()
         power = true;
     else
         power = false;
+    return (0);
 }
 
 int TV:: upChannel()
@@ -34,6 +35,7 @@ int TV:: setChannel(int num)
         return (1);
     else
         channel = num;
+    return (0);
 }
 
 int TV:: upVolume()
@@ -60,6 +62,7 @@ int TV:: setVolume(int num)
         return (1);
     else
         volume = num;
+    return (0);
 }
 
 int main(void)
