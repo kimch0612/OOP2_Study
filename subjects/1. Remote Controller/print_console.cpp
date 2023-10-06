@@ -4,7 +4,7 @@ void title_whitespace(string device)
 {
     string title("Device name: ");
     cout << '-';
-    int i, index = -1, size;
+    int i, size;
     size = 24 - device.size();
     for (i=0; i <= 37 - (title.size() + device.size()); i++)
     {
@@ -20,7 +20,7 @@ void status_whitespace(TV tv, int flag)
 {
     cout << '-';
     int i, size;
-    string tmp;
+    string tmp, tmp1, tmp2;
     switch(flag)
     {
         case 0:
@@ -36,6 +36,23 @@ void status_whitespace(TV tv, int flag)
                 else
                     cout << tmp;
             }
+            break;
+        case 1:
+            tmp1 = to_string(tv.get_status(1));
+            tmp2 = to_string(tv.get_status(2));
+            size = 8 - (tmp1.size() + tmp2.size());
+            for (i=0; i <= 37; i++)
+            {
+                if (i <= size/2 - 1 || i >= size/2 + 1)
+                    cout << " ";
+                else if (i == 19)
+                    cout << "M";
+                else if (i >= size/2 - 1 || i < 19)
+                    cout << tv.get_status(1);
+                else
+                    cout << tv.get_status(2);
+            }
+            break;
     }
     cout << '-' << endl;
 }
@@ -52,7 +69,7 @@ void print_screen(TV tv, string device)
     cout << "-    C                           V    -" << endl;
     cout << "-                                     -" << endl;
     cout << "-    ↑                           ↑    -" << endl;
-    cout << "-                  M                  -" << endl;
+    status_whitespace(tv, 1);
     cout << "-    ↓                           ↓    -" << endl;
     cout << "-                                     -" << endl;
     cout << "-                                     -" << endl;
