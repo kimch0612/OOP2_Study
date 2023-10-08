@@ -70,7 +70,7 @@ int TV:: downVolume()
 
 void TV:: muteVolume()
 {
-
+    volume = 0;
 }
 
 int TV:: setVolume(int num)
@@ -82,8 +82,9 @@ int TV:: setVolume(int num)
     return (0);
 }
 
-int task_gate(TV& tv, string task)
+int task_gate(TV& tv, string task, string& notice)
 {
+    notice = "";
     if (task.find("--help") != string::npos)
     {
         cout << "도움말입니다." << endl;
@@ -95,15 +96,43 @@ int task_gate(TV& tv, string task)
         if (task.find("UP") != string::npos || task.find("up") != string::npos)
         {
             if (tv.upChannel() == 1)
-                cout << "Channel이 MAX입니다." << endl;
+                notice = "Channel이 MAX입니다.";
         }
         else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
         {
             if (tv.downChannel() == 1)
-                cout << "Channel이 MIN입니다." << endl;
+                notice = "Channel이 MIN입니다.";
+        }
+        else if (task.find("SET") != string::npos || task.find("set") != string::npos)
+        {
+            string chn = "";
+            for (char c : task)
+            {
+                if (isdigit(c))
+                    chn += c;
+            }
+            if (tv.setChannel(stoi(chn)) == 1)
+                notice = "Channel의 range를 벗어났습니다.";
+        }
+    }
+    else if (task.find("V") != string::npos || task.find("v") != string::npos)
+    {
+        if (task.find("UP") != string::npos || task.find("up") != string::npos)
+        {
+            if (tv.upVolume() == 1)
+                notice = "Volume이 MAX입니다.";
+        }
+        else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
+        {
+            if (tv.downVolume() == 1)
+                notice = "Volume이 MIN입니다.";
         }
     }
     else if (task.find("M") != string::npos || task.find("m") != string::npos)
-
+    {
+        tv.muteVolume();
+        notice = "Volume을 Mute했습니다.";
+    }
     std::system("clear");
+    return (0);
 }
