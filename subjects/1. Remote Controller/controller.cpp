@@ -11,6 +11,9 @@ controller.cpp
 functions.cpp
 print_console.cpp
 header.h
+
+/// 빌드 및 실행 방법 ///
+terminal 창에서 "g++ *.cpp && ./a.out" 입력
 */
 
 #include "header.h"
