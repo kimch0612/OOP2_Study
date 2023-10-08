@@ -84,70 +84,82 @@ int TV:: setVolume(int num)
 
 int task_gate(TV& tv, string task, string& notice)
 {
+    int flag = 0;
     notice = "";
+
     if (task.find("--help") != string::npos)
     {
-        cout << "도움말입니다." << endl;
+        notice = "도움말입니다.";
+        flag = 1;
     }
     else if (task == "P" || task == "p")
+    {        
         tv.power_controll();
-    else if (task.find("C") != string::npos || task.find("c") != string::npos)
-    {
-        if (task.find("UP") != string::npos || task.find("up") != string::npos)
-        {
-            if (tv.upChannel() == 1)
-                notice = "Channel이 MAX입니다.";
-        }
-        else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
-        {
-            if (tv.downChannel() == 1)
-                notice = "Channel이 MIN입니다.";
-        }
-        else if (task.find("SET") != string::npos || task.find("set") != string::npos)
-        {
-            string chn = "";
-            for (char c : task)
-            {
-                if (isdigit(c))
-                    chn += c;
-            }
-            if (tv.setChannel(stoi(chn)) == 1)
-                notice = "Channel의 range를 벗어났습니다.";
-        }
+        flag = 1;
     }
-    else if (task.find("V") != string::npos || task.find("v") != string::npos)
+
+    if (tv.get_status(0) == 1 && flag == 0)
     {
-        if (task.find("UP") != string::npos || task.find("up") != string::npos)
+        if (task.find("C") != string::npos || task.find("c") != string::npos)
         {
-            if (tv.upVolume() == 1)
-                notice = "Volume이 MAX입니다.";
-        }
-        else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
-        {
-            if (tv.downVolume() == 1)
-                notice = "Volume이 MIN입니다.";
-        }
-        else if (task.find("SET") != string::npos || task.find("set") != string::npos)
-        {
-            string chn = "";
-            for (char c : task)
+            if (task.find("UP") != string::npos || task.find("up") != string::npos)
             {
-                if (isdigit(c))
-                    chn += c;
+                if (tv.upChannel() == 1)
+                    notice = "Channel이 MAX입니다.";
             }
-            if (tv.setVolume(stoi(chn)) == 1)
-                notice = "Volume의 range를 벗어났습니다.";
+            else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
+            {
+                if (tv.downChannel() == 1)
+                    notice = "Channel이 MIN입니다.";
+            }
+            else if (task.find("SET") != string::npos || task.find("set") != string::npos)
+            {
+                string chn = "";
+                for (char c : task)
+                {
+                    if (isdigit(c))
+                        chn += c;
+                }
+                if (tv.setChannel(stoi(chn)) == 1)
+                    notice = "Channel의 range를 벗어났습니다.";
+            }
         }
-    }
-    else if (task.find("M") != string::npos || task.find("m") != string::npos)
-    {
-        tv.muteVolume();
-        notice = "Volume을 Mute했습니다.";
+        else if (task.find("V") != string::npos || task.find("v") != string::npos)
+        {
+            if (task.find("UP") != string::npos || task.find("up") != string::npos)
+            {
+                if (tv.upVolume() == 1)
+                    notice = "Volume이 MAX입니다.";
+            }
+            else if (task.find("DOWN") != string::npos || task.find("down") != string::npos)
+            {
+                if (tv.downVolume() == 1)
+                    notice = "Volume이 MIN입니다.";
+            }
+            else if (task.find("SET") != string::npos || task.find("set") != string::npos)
+            {
+                string chn = "";
+                for (char c : task)
+                {
+                    if (isdigit(c))
+                        chn += c;
+                }
+                if (tv.setVolume(stoi(chn)) == 1)
+                    notice = "Volume의 range를 벗어났습니다.";
+            }
+        }
+        else if (task.find("M") != string::npos || task.find("m") != string::npos)
+        {
+            tv.muteVolume();
+            notice = "Volume을 Mute했습니다.";
+        }
+        else
+            notice = "사용법이 잘못됐거나 존재하지 않는 기능입니다\n--help를 통해 사용법을 확인해주세요.";
     }
     else
-    {
-        notice = "사용법이 잘못됐거나 존재하지 않는 기능입니다\n--help를 통해 사용법을 확인해주세요.";
-    }
+        if (flag == 0)
+            notice = "TV의 전원이 꺼져있습니다.";
+
     std::system("clear");
     return (0);
 }
