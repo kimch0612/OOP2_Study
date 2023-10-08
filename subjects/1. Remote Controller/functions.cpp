@@ -127,11 +127,26 @@ int task_gate(TV& tv, string task, string& notice)
             if (tv.downVolume() == 1)
                 notice = "Volume이 MIN입니다.";
         }
+        else if (task.find("SET") != string::npos || task.find("set") != string::npos)
+        {
+            string chn = "";
+            for (char c : task)
+            {
+                if (isdigit(c))
+                    chn += c;
+            }
+            if (tv.setVolume(stoi(chn)) == 1)
+                notice = "Volume의 range를 벗어났습니다.";
+        }
     }
     else if (task.find("M") != string::npos || task.find("m") != string::npos)
     {
         tv.muteVolume();
         notice = "Volume을 Mute했습니다.";
+    }
+    else
+    {
+        notice = "사용법이 잘못됐거나 존재하지 않는 기능입니다\n--help를 통해 사용법을 확인해주세요.";
     }
     std::system("clear");
     return (0);

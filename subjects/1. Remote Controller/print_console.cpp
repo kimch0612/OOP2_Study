@@ -40,6 +40,8 @@ void status_whitespace(TV tv, int flag)
                 cout << "   " << tmp1 << "             M             " << tmp2 << "    ";
             else if (tmp1.size() == 2 && tmp2.size() == 2)
                 cout << "   " << tmp1 << "             M             " << tmp2 << "   ";
+            else if (tmp1.size() == 2 && tmp2.size() == 3)
+                cout << "   " << tmp1 << "             M            " << tmp2 << "   ";
             else if (tmp1.size() == 3 && tmp2.size() == 1)
                 cout << "   " << tmp1 << "            M             " << tmp2 << "    ";
             else if (tmp1.size() == 3 && tmp2.size() == 2)
@@ -49,7 +51,7 @@ void status_whitespace(TV tv, int flag)
             else if (tmp1.size() == 1 && tmp2.size() == 2)
                 cout << "    " << tmp1 << "             M             " << tmp2 << "   ";
             else if (tmp1.size() == 1 && tmp2.size() == 3)
-                cout << "    " << tmp1 << "             M            " << tmp2 << "    ";
+                cout << "    " << tmp1 << "             M            " << tmp2 << "   ";
             break;
     }
     cout << '-' << endl;
