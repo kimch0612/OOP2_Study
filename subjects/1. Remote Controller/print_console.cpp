@@ -32,27 +32,24 @@ void status_whitespace(TV tv, int flag)
             }
             break;
         case 1:
-            string center("");
             tmp1 = to_string(tv.get_status(1));
             tmp2 = to_string(tv.get_status(2));
-            size = 8 - (tmp1.size() + tmp2.size());
-            for (i=0; i <= 36; i++)
-            {
-                if (i == 18)
-                    cout << "M";
-                else if ((i < 18) || i > 18)
-                {
-                    if (i < 5 || i > 33 || (i > 5 && i < 18) || (i > 18 && i < 33))
-                        cout << " ";
-                    else if(i < 18 && flags == 0)
-                    {
-                        flags = 1;
-                        cout << tv.get_status(1);
-                    }
-                    else
-                        cout << tv.get_status(2);
-                }
-            }
+            if (tmp1.size() == 1 && tmp2.size() == 1)
+                cout << "    " << tmp1 << "             M             " << tmp2 << "    ";
+            else if (tmp1.size() == 2 && tmp2.size() == 1)
+                cout << "   " << tmp1 << "             M             " << tmp2 << "    ";
+            else if (tmp1.size() == 2 && tmp2.size() == 2)
+                cout << "   " << tmp1 << "             M             " << tmp2 << "   ";
+            else if (tmp1.size() == 3 && tmp2.size() == 1)
+                cout << "   " << tmp1 << "            M             " << tmp2 << "    ";
+            else if (tmp1.size() == 3 && tmp2.size() == 2)
+                cout << "   " << tmp1 << "            M             " << tmp2 << "    ";
+            else if (tmp1.size() == 3 && tmp2.size() == 3)
+                cout << "   " << tmp1 << "            M            " << tmp2 << "    ";
+            else if (tmp1.size() == 1 && tmp2.size() == 2)
+                cout << "    " << tmp1 << "             M             " << tmp2 << "   ";
+            else if (tmp1.size() == 1 && tmp2.size() == 3)
+                cout << "    " << tmp1 << "             M            " << tmp2 << "    ";
             break;
     }
     cout << '-' << endl;
