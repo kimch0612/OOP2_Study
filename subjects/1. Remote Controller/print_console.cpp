@@ -8,10 +8,8 @@ void title_whitespace(string device)
     size = 24 - device.size();
     for (i=0; i <= 37 - (title.size() + device.size()); i++)
     {
-        if (i <= size/2 - 1 || i >= size/2 + 1)
-            cout << " ";
-        else
-            cout << title << device;
+        if (i <= size/2 - 1 || i >= size/2 + 1) cout << " ";
+        else cout << title << device;
     }
     cout << '-' << endl;
 }
@@ -19,38 +17,41 @@ void title_whitespace(string device)
 void status_whitespace(TV tv, int flag)
 {
     cout << '-';
-    int i, size;
+    int i, size, flags = 0;
     string tmp, tmp1, tmp2;
     switch(flag)
     {
         case 0:
-            if (tv.get_status(0) == 1)
-                tmp = "On";
-            else
-                tmp = "Off";
+            if (tv.get_status(0) == 1) tmp = "On";
+            else tmp = "Off";
             size = 37 - tmp.size();
             for (i=0; i <= 37 - tmp.size(); i++)
             {
-                if (i <= size/2 - 1 || i >= size/2 + 1)
-                    cout << " ";
-                else
-                    cout << tmp;
+                if (i <= size/2 - 1 || i >= size/2 + 1) cout << " ";
+                else cout << tmp;
             }
             break;
         case 1:
+            string center("");
             tmp1 = to_string(tv.get_status(1));
             tmp2 = to_string(tv.get_status(2));
             size = 8 - (tmp1.size() + tmp2.size());
-            for (i=0; i <= 37; i++)
+            for (i=0; i <= 36; i++)
             {
-                if (i <= size/2 - 1 || i >= size/2 + 1)
-                    cout << " ";
-                else if (i == 19)
+                if (i == 18)
                     cout << "M";
-                else if (i >= size/2 - 1 || i < 19)
-                    cout << tv.get_status(1);
-                else
-                    cout << tv.get_status(2);
+                else if ((i < 18) || i > 18)
+                {
+                    if (i < 5 || i > 33 || (i > 5 && i < 18) || (i > 18 && i < 33))
+                        cout << " ";
+                    else if(i < 18 && flags == 0)
+                    {
+                        flags = 1;
+                        cout << tv.get_status(1);
+                    }
+                    else
+                        cout << tv.get_status(2);
+                }
             }
             break;
     }
