@@ -19,10 +19,8 @@ int TV:: get_status(int flag)
 
 void TV:: power_controll()
 {
-    if (power == false)
-        power = true;
-    else
-        power = false;
+    if (power == false) power = true;
+    else power = false;
 }
 
 int TV:: upChannel()
@@ -70,6 +68,11 @@ int TV:: downVolume()
         return (0);
 }
 
+void TV:: muteVolume()
+{
+
+}
+
 int TV:: setVolume(int num)
 {
     if (num > 100 || num < 0)
@@ -100,4 +103,7 @@ int task_gate(TV& tv, string task)
                 cout << "Channel이 MIN입니다." << endl;
         }
     }
+    else if (task.find("M") != string::npos || task.find("m") != string::npos)
+
+    std::system("clear");
 }

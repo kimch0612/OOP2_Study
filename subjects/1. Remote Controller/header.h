@@ -15,6 +15,7 @@ public:
     int setChannel(int num);
     int upVolume();
     int downVolume();
+    void muteVolume();
     int setVolume(int num);
 };
 void print_screen(TV tv, string device);
