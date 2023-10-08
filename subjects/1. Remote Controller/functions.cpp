@@ -84,24 +84,28 @@ int TV:: setVolume(int num) // 입력받은 값이 100을 초과하거나 음수
     return (0);
 }
 
+/*main함수로부터 넘겨받은 task 인자를 기준으로 어떤 작업을 진행할지 판단하는 함수입니다.
+tv클래스와 notice 변수는 실제 값이 변경되어야 하므로 Call by reference 형태로 인자를 받고,
+task는 그럴 필요가 없으므로 Call by value 형태로 인자를 받습니다.*/
 int task_gate(TV& tv, string task, string& notice)
 {
-    int flag = 0;
-    notice = "";
+    int flag = 1; // 이곳에서의 flag는 '--help' 기능과 'power' 기능이 아래의 기능들과 중복 실행되지 않도록 막는 기능을 합니다
+    notice = ""; // notice가 이전 작업의 것을 출력하면 안 되므로 초기화합니다.
 
     if (task.find("--help") != string::npos)
     {
         notice = "도움말입니다.";
-        flag = 1;
+        flag = 0;
     }
     else if (task == "P" || task == "p")
     {        
         tv.power_controll();
-        flag = 1;
+        flag = 0;
     }
 
-    if (tv.get_status(0) == 1 && flag == 0)
+    if (tv.get_status(0) == 1 && flag == 1) // tv.get_status() 함수가 1(power 변수가 true)이면서, flag가 꺾이지 않았다면 실행합니다.
     {
+        /*string task에서 특정 값을 find해서 만족하는 기능을 실행합니다.*/
         if (task.find("C") != string::npos || task.find("c") != string::npos)
         {
             if (task.find("UP") != string::npos || task.find("up") != string::npos)
@@ -116,13 +120,13 @@ int task_gate(TV& tv, string task, string& notice)
             }
             else if (task.find("SET") != string::npos || task.find("set") != string::npos)
             {
-                string chn = "";
+                string chn = ""; // task에 있는 integer를 임시 저장하는 공간입니다.
                 for (char c : task)
                 {
-                    if (isdigit(c))
+                    if (isdigit(c)) // char c가 digit(0~9 사이의 수)라면 chn에 c를 이어붙입니다.
                         chn += c;
                 }
-                if (tv.setChannel(stoi(chn)) == 1)
+                if (tv.setChannel(stoi(chn)) == 1) // setChannel에 chn을 stoi(string to integer)한 값을 인자로 넘겨줍니다.
                     notice = "Channel의 range를 벗어났습니다.";
             }
         }
@@ -155,13 +159,15 @@ int task_gate(TV& tv, string task, string& notice)
             tv.muteVolume();
             notice = "Volume을 Mute했습니다.";
         }
-        else
+        else // 위의 그 어떠한 함수에도 걸리지 않았다면 오류메세지를 출력합니다.
             notice = "사용법이 잘못됐거나 존재하지 않는 기능입니다\n--help를 통해 사용법을 확인해주세요.";
     }
-    else
-        if (flag == 0)
-            notice = "TV의 전원이 꺼져있습니다.";
+    else // tv.get_status() 함수가 0(power 변수가 false) 라면 실행합니다.
+    {        
+        if (flag == 1) // '--help' 기능과 'power' 기능이 아래의 기능들과 중복 실행되지 않도록 막는 기능을 합니다.
+        notice = "TV의 전원이 꺼져있습니다.";
+    }
 
-    std::system("clear");
+    std::system("clear"); // Terminal을 clear합니다.
     return (0);
 }
