@@ -94,7 +94,7 @@ int task_gate(TV& tv, string task, string& notice)
 
     if (task.find("--help") != string::npos)
     {
-        notice = "P: TV의 전원을 켜고 끕니다.\nCUP/CDOWN: 채널을 1만큼 올리고 내립니다.\nCSET숫자: 채널을 원하는 값으로 변경합니다.\nVUP/VDOWN: 볼륨을 1만큼 올리고 내립니다.\nVSET: 볼륨을 원하는 값으로 변경합니다.\nM: 볼륨을 Mute합니다.";
+        notice = "P: TV의 전원을 켜고 끕니다.\nCUP/CDOWN: 채널을 1만큼 올리고 내립니다.\nCSET숫자: 채널을 원하는 값으로 변경합니다.\nVUP/VDOWN: 볼륨을 1만큼 올리고 내립니다.\nVSET숫자: 볼륨을 원하는 값으로 변경합니다.\nM: 볼륨을 Mute합니다.";
         flag = 0;
     }
     else if (task == "P" || task == "p")
