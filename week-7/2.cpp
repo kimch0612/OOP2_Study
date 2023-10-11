@@ -1,3 +1,4 @@
+// 함수의 오버로드 (위임생성자)
 #include <iostream>
 using namespace std;
 
