@@ -1,0 +1,27 @@
+1d0
+< // 복사생성자
+7a7
+> 
+10,13c10,13
+<     Circle() {radius = 1;}
+<     Circle(int radius) {this -> radius = radius;}
+<     double getArea() {return 3.14 * radius * radius;}
+< }
+---
+>     Circle() { radius = 1; }
+>     Circle(int radius) { this->radius = radius; }
+>     double getArea() { return 3.14 * radius * radius; }
+> };
+15c15
+< Circle:: Circle(const Circle& c)
+---
+> Circle::Circle(const Circle& c)
+17c17
+<     this -> radius = c.radius;
+---
+>     this->radius = c.radius;
+28c28
+< }
+\ No newline at end of file
+---
+> }
