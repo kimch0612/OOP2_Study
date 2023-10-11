@@ -5,6 +5,7 @@
 ex) Circle:: ~Circle(){...}
 클래스 하나만 닫아줘도 그 하위 객체들은 자동으로 삭제됨.
 삭제 순서는 선입후출과 같은 구조 (나중에 생성된 것이 먼저 해제됨)
+촬영한 사진 참고.
 */
 #include <iostream>
 using namespace std;
