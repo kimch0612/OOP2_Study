@@ -22,18 +22,18 @@ int main(void)
     cout << "생성하고자 하는 원의 개수?: ";
     cin >> n;
 
-    Circle circleArray[n];
+    Circle* pArray = new Circle[n];
 
     for (int i = 0; i < n; i++)
     {
         cout << "원" << i << ": ";
         cin >> radius;
-        circleArray[i].setRadius(radius);
+        pArray[i].setRadius(radius);
     }
 
     for (int i = 0; i < n; i++)
     {
-        cout << circleArray[i].getArea() << " ";
+        cout << pArray[i].getArea() << " ";
     }
 
     cout << "\n";
@@ -42,8 +42,10 @@ int main(void)
 
     for (int i = 0; i < n; i++)
     {
-        if (circleArray[i].getArea() >= 100 && circleArray[i].getArea() <= 200)
+        if (pArray[i].getArea() >= 100 && pArray[i].getArea() <= 200)
             num++;
     }
     cout << num << endl;
+
+    delete [] pArray;
 }
