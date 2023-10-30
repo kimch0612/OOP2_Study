@@ -14,7 +14,7 @@ int main(void)
     div = grade / 10;
     switch(div)
     {
-        case 100:
+        case 10:
         case 9:
             cout << "A입니다." << endl; break;
         case 8:
