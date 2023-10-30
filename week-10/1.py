@@ -15,4 +15,14 @@ node3 = TreeNode()
 node3.data = "문별"
 node1.right = node3
 
-print(node1.data, node2.data, node3.data)
+node4 = TreeNode()
+node4.data = "휘인"
+node2.left = node4
+
+node5 = TreeNode()
+node5.data = "쯔위"
+node2.right = node5
+
+node6 = TreeNode()
+node6.data = "선미"
+node3.left = node6
