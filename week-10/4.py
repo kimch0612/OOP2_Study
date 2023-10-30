@@ -30,4 +30,13 @@ for name in nameAry[1:]:
             current = current.right
     memory.append(node)
 
+def preorder(node):
+    if node == None:
+        return
+    print(node.data, end='->')
+    preorder(node.left)
+    preorder(node.right)
+
 print("이진 탐색 트리 구성 완료!")
+preorder(root)
+print("끝!")
