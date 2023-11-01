@@ -1,6 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int main(void){
+class Power{
+    int kick;
+    int punch;
+public:
+    Power(int kick=0, int punch=0){
+        this->kick=kick; 
+        this->punch=punch;
+    }
+    void show();
+    Power& operator++ (int x);
+};
+
+void Power:: show(){
+    cout << "kick=" << kick << ", punch=" << punch << endl;
+}
+
+Power Power::operator++ (int x){
     
+}
+
+int main(void){
+
 }
