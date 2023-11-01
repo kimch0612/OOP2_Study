@@ -7,7 +7,7 @@ class Point{
 public:
     void set(int x, int y) { this->x=x; this->y=y; }
     void showPoint(){
-        cout << "(" << x << ", " << y << ")" << endl;
+        cout << "(" << x << "," << y << ")" << endl;
     }
 };
 
@@ -19,7 +19,7 @@ public:
 };
 
 void ColorPoint:: showColorPoint(){
-    cout << color << ": ";
+    cout << color << ":";
     showPoint();
 }
 
