@@ -29,7 +29,7 @@ public:
     bool equals(ColorPoint p);
 };
 
-void ColorPoint:: showColorPoint(){
+void ColorPoint:: setColor(string color){
 
 }
 
