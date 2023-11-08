@@ -1,37 +1,25 @@
 #include <iostream>
 using namespace std;
 
-class Power{
-    int kick;
-    int punch;
+class Rect;
+bool equals(Rect r, Rect s);
+
+class Rect{
+    int width, height;
 public:
-    Power(int kick=0, int punch=0)
-    {
-        this -> kick = kick;
-        this -> punch = punch;
-    }
-    void show();
-    Power operator+ (Power op2);
+    Rect(int width, int height) {this -> width = width; this -> height = height; }
+    friend bool equals(Rect r, Rect s);
 };
 
-void Power:: show()
+bool equals(Rect r, Rect s)
 {
-    cout << "kick=" << kick << ", punch=" << punch << endl;
-}
-
-Power Power::operator+ (Power op2)
-{
-    Power tmp;
-    tmp.kick = this->kick + op2.kick;
-    tmp.punch = this->punch + op2.punch;
-    return tmp;
+    if (r.width == s.width && r.height == s.height) return true;
+    else return false;
 }
 
 int main(void)
 {
-    Power a(3, 5), b(4, 3), c;
-    c = a + b;
-    a.show();
-    b.show();
-    c.show(); 
+    Rect a(3, 4), b(3, 4);
+    if (equals(a, b)) cout << "equal" << endl;
+    else cout << "not equal" << endl;
 }
