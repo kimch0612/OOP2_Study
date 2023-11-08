@@ -22,7 +22,7 @@ public:
 class SmartTV : public WideTV {
     string ipAddr;
 public:
-    SmartTV(string ipAddr, int size) : WideTV(size, true) {
+    SmartTV(string ipAddr, int size) : WideTV(size, false) {
         this->ipAddr = ipAddr;
     }
     string getIpAddr() { return ipAddr; }
@@ -30,7 +30,7 @@ public:
 
 int main(void)
 {
-    SmartTV htv("192.0.0.1", 32);
+    SmartTV htv("192.0.0.1", 35);
     cout << "size=" << htv.getSize() << endl;
     cout << "videoIn=" << boolalpha << htv.getVideoIn() << endl;
     cout << "IP=" << htv.getIpAddr() << endl;
