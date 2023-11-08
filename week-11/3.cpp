@@ -10,10 +10,10 @@ public:
 class B : public A{
 public:
     B() { cout << "생성자 B" << endl; }
-    B(int x) { cout << "매개변수생성자 B" << x << endl; }
+    B(int x) : A(x+3) { cout << "매개변수생성자 B" << x << endl; }
 };
 
 int main(void)
 {
-    B b;
+    B b(5);
 }
