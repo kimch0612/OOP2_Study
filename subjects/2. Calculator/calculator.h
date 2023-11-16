@@ -7,5 +7,5 @@ class calculator{
     int a, b;
 public:
     int c, d;
-}
-#ENDIF
+};
+#endif
