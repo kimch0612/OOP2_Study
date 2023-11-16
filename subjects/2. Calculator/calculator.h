@@ -19,10 +19,20 @@ class Quotient {
 protected:
     int quot(int a, int b) { return a % b; }
 }
+class Factorial {
+protected:
+    int factorial(int a)
+    {
+        int temp = 1;
+        for (int i=0; i<a; i++)
+            temp += a*i;
+    }
+    int fact(int a) { return 0; }
+}
 class calculator : public Adder, public Subtraction, public Division, public Quotient {
     void input()
     {
-        cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1)\n>> ";
+        cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1, 5 !)\n>> ";
         cin >> first >> operator >> second;
     }
 protected:
