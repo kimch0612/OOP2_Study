@@ -19,7 +19,7 @@ class Quotient {
 protected:
     int quot(int a, int b) { return a % b; }
 }
-class calculator : public Adder, public Subtraction {
+class calculator : public Adder, public Subtraction, public Division, public Quotient {
     void input()
     {
         cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1)\n>> ";
