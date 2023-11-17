@@ -12,6 +12,7 @@ int calculator:: find_operator(calculator cal)
     else if (cal.oper.find("x") != std::string::npos) flag = 3;
     else if (cal.oper.find("/") != std::string::npos) flag = 4;
     else if (cal.oper.find("%") != std::string::npos) flag = 5;
+    else if (cal.oper.find("!") != std::string::npos) flag = 6;
     else flag = -1;
     return 0;
 }
