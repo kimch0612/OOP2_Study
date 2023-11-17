@@ -14,11 +14,29 @@ int calculator:: find_operator(calculator cal)
     else if (cal.oper.find("%") != std::string::npos) flag = 5;
     else if (cal.oper.find("!") != std::string::npos) flag = 6;
     else flag = -1;
-    return 0;
+    return flag;
 }
 
 int main(void)
 {
     calculator hand_calculator;
     hand_calculator.input();
+    cout << "현재 입력한 작업은 ";
+    switch(hand_calculator.find_operator(hand_calculator))
+    {
+        case 1:
+            cout << "덧셈입니다." << endl; break;
+        case 2:
+            cout << "뺄셈입니다." << endl; break;
+        case 3:
+            cout << "곱셈입니다." << endl; break;
+        case 4:
+            cout << "나눗셈입니다." << endl; break;
+        case 5:
+            cout << "몫입니다." << endl; break;
+        case 6:
+            cout << "팩토리얼입니다." << endl; break;
+        default:
+            cout << "아무런 작업도 아닙니다." << endl; break;
+    }
 }
