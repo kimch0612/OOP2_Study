@@ -38,5 +38,6 @@ public:
         cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1, 5 !)\n>> ";
         getline(cin, oper);
     }
+    int find_operator(calculator cal);
 };
 #endif

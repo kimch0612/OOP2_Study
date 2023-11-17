@@ -4,6 +4,18 @@
 */
 #include "calculator.h"
 
+int calculator:: find_operator(calculator cal)
+{
+    int flag = 0;
+    if (cal.oper.find("+") != std::string::npos) flag = 1;
+    else if (cal.oper.find("-") != std::string::npos) flag = 2;
+    else if (cal.oper.find("x") != std::string::npos) flag = 3;
+    else if (cal.oper.find("/") != std::string::npos) flag = 4;
+    else if (cal.oper.find("%") != std::string::npos) flag = 5;
+    else flag = -1;
+    return 0;
+}
+
 int main(void)
 {
     calculator hand_calculator;
