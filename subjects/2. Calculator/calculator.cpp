@@ -3,5 +3,6 @@
 
 int main(void)
 {
-    cout << "hello world!" << endl;
+    calculator hand_calculator;
+    hand_calculator.input();
 }

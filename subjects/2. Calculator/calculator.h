@@ -30,13 +30,13 @@ protected:
     int fact(int a) { return 0; }
 };
 class calculator : public Adder, public Subtraction, public Division, public Quotient {
+protected:
+    string oper;
+public:
     void input()
     {
         cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1, 5 !)\n>> ";
         getline(cin, oper);
     }
-protected:
-    string oper;
-public:
 };
 #endif
