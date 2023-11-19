@@ -3,22 +3,27 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 class Adder {
 protected:
     int add(int a, int b) { return a + b; }
 };
+
 class Subtraction {
 protected:
     int sub(int a, int b) { return a - b; }
 };
+
 class Division {
 protected:
     int div(int a, int b) { return a / b; }
 };
+
 class Quotient {
 protected:
     int quot(int a, int b) { return a % b; }
 };
+
 class Factorial {
 protected:
     int factorial(int a)
@@ -29,6 +34,7 @@ protected:
     }
     int fact(int a) { return 0; }
 };
+
 class calculator : public Adder, public Subtraction, public Division, public Quotient {
 protected:
     string oper;
@@ -39,5 +45,6 @@ public:
         getline(cin, oper);
     }
     int find_operator(calculator cal);
+    string rm_whitespaces(calculator cal);
 };
 #endif

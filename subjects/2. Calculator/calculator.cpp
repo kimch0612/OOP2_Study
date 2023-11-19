@@ -17,26 +17,41 @@ int calculator:: find_operator(calculator cal)
     return flag;
 }
 
+string calculator:: rm_whitespaces(calculator cal)
+{
+    int i = -1;
+    string temp;
+    while (cal.oper[++i] != 0)
+    {
+        if (cal.oper[i] != ' ')
+            temp += cal.oper[i];
+    }
+    return temp;
+}
+
 int main(void)
 {
     calculator hand_calculator;
-    hand_calculator.input();
-    cout << "현재 입력한 작업은 ";
-    switch(hand_calculator.find_operator(hand_calculator))
+    while (1)
     {
-        case 1:
-            cout << "덧셈입니다." << endl; break;
-        case 2:
-            cout << "뺄셈입니다." << endl; break;
-        case 3:
-            cout << "곱셈입니다." << endl; break;
-        case 4:
-            cout << "나눗셈입니다." << endl; break;
-        case 5:
-            cout << "몫입니다." << endl; break;
-        case 6:
-            cout << "팩토리얼입니다." << endl; break;
-        default:
-            cout << "아무런 작업도 아닙니다." << endl; break;
+        hand_calculator.input();
+        cout << "현재 입력한 작업은 ";
+        switch(hand_calculator.find_operator(hand_calculator))
+        {
+            case 1:
+                cout << "덧셈입니다." << endl; break;
+            case 2:
+                cout << "뺄셈입니다." << endl; break;
+            case 3:
+                cout << "곱셈입니다." << endl; break;
+            case 4:
+                cout << "나눗셈입니다." << endl; break;
+            case 5:
+                cout << "몫입니다." << endl; break;
+            case 6:
+                cout << "팩토리얼입니다." << endl; break;
+            default:
+                cout << "아무런 작업도 아닙니다." << endl; break;
+        }
     }
 }
