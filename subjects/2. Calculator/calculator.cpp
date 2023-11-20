@@ -35,36 +35,18 @@ void calculator:: set_value(int flag, int a, string oper, int b)
 
 int main(int argc, char **argv)
 {
+    int result;
     calculator hand_calculator;
     switch(argc)
     {
         case 3:
-            cout << "n !" << endl; break;
+            cout << "n !" << endl; 
+            break;
         case 4:
-            cout << "n + n" << endl; break;
+            cout << "n + n" << endl;
+            result = hand_calculator.add(hand_calculator.a, hand_calculator.b);
+            break;
         default:
             cout << "올바르게 다시 입력하세요." << endl; break;
     }
-    // while (1)
-    // {
-    //     hand_calculator.input();
-    //     cout << "현재 입력한 작업은 ";
-    //     switch(hand_calculator.find_operator(hand_calculator))
-    //     {
-    //         case 1:
-    //             cout << "덧셈입니다." << endl; break;
-    //         case 2:
-    //             cout << "뺄셈입니다." << endl; break;
-    //         case 3:
-    //             cout << "곱셈입니다." << endl; break;
-    //         case 4:
-    //             cout << "나눗셈입니다." << endl; break;
-    //         case 5:
-    //             cout << "몫입니다." << endl; break;
-    //         case 6:
-    //             cout << "팩토리얼입니다." << endl; break;
-    //         default:
-    //             cout << "아무런 작업도 아닙니다." << endl; break;
-    //     }
-    // }
 }

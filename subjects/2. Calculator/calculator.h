@@ -5,27 +5,27 @@
 using namespace std;
 
 class Adder {
-protected:
+public:
     int add(int a, int b) { return a + b; }
 };
 
 class Subtraction {
-protected:
+public:
     int sub(int a, int b) { return a - b; }
 };
 
 class Division {
-protected:
+public:
     int div(int a, int b) { return a / b; }
 };
 
 class Quotient {
-protected:
+public:
     int quot(int a, int b) { return a % b; }
 };
 
 class Factorial {
-protected:
+public:
     int factorial(int a)
     {
         int temp = 1;
@@ -36,9 +36,9 @@ protected:
 };
 
 class calculator : public Adder, public Subtraction, public Division, public Quotient {
+public:
     int a, b;
     string oper;
-public:
     int find_operator(calculator cal);
     void set_value(int flag, int a, string oper, int b);
 };
