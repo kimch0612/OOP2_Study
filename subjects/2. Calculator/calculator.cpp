@@ -1,6 +1,6 @@
 /*
 20102056 김창환 - 객체지향프로그래밍2 기말 대체 과제
-빌드 및 실행 방법: Unix 또는 Linux 환경의 Terminal에서 g++ *.cpp && ./a.out 명령어 입력.
+빌드 및 실행 방법: Unix 또는 Linux 환경의 Terminal에서 g++ *.cpp && ./a.out [operator] 명령어 입력.
 */
 #include "calculator.h"
 
@@ -47,6 +47,6 @@ int main(int argc, char **argv)
             result = hand_calculator.add(hand_calculator.a, hand_calculator.b);
             break;
         default:
-            cout << "올바르게 다시 입력하세요." << endl; break;
+            cout << "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !" << endl; break;
     }
 }
