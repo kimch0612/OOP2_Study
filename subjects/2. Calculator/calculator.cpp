@@ -29,29 +29,38 @@ string calculator:: rm_whitespaces(calculator cal)
     return temp;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
     calculator hand_calculator;
-    while (1)
+    switch(argc)
     {
-        hand_calculator.input();
-        cout << "현재 입력한 작업은 ";
-        switch(hand_calculator.find_operator(hand_calculator))
-        {
-            case 1:
-                cout << "덧셈입니다." << endl; break;
-            case 2:
-                cout << "뺄셈입니다." << endl; break;
-            case 3:
-                cout << "곱셈입니다." << endl; break;
-            case 4:
-                cout << "나눗셈입니다." << endl; break;
-            case 5:
-                cout << "몫입니다." << endl; break;
-            case 6:
-                cout << "팩토리얼입니다." << endl; break;
-            default:
-                cout << "아무런 작업도 아닙니다." << endl; break;
-        }
+        case 3:
+            cout << "n !" << endl; break;
+        case 4:
+            cout << "n + n" << endl; break;
+        default:
+            cout << "올바르게 다시 입력하세요." << endl; break;
     }
+    // while (1)
+    // {
+    //     hand_calculator.input();
+    //     cout << "현재 입력한 작업은 ";
+    //     switch(hand_calculator.find_operator(hand_calculator))
+    //     {
+    //         case 1:
+    //             cout << "덧셈입니다." << endl; break;
+    //         case 2:
+    //             cout << "뺄셈입니다." << endl; break;
+    //         case 3:
+    //             cout << "곱셈입니다." << endl; break;
+    //         case 4:
+    //             cout << "나눗셈입니다." << endl; break;
+    //         case 5:
+    //             cout << "몫입니다." << endl; break;
+    //         case 6:
+    //             cout << "팩토리얼입니다." << endl; break;
+    //         default:
+    //             cout << "아무런 작업도 아닙니다." << endl; break;
+    //     }
+    // }
 }
