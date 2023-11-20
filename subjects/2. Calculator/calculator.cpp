@@ -17,16 +17,20 @@ int calculator:: find_operator(calculator cal)
     return flag;
 }
 
-string calculator:: rm_whitespaces(calculator cal)
+void calculator:: set_value(int flag, int a, string oper, int b)
 {
-    int i = -1;
-    string temp;
-    while (cal.oper[++i] != 0)
+    switch(flag)
     {
-        if (cal.oper[i] != ' ')
-            temp += cal.oper[i];
+        case 0:
+            this -> a = a;
+            this -> oper = oper;
+            this -> b = b;
+            break;
+        case 1:
+            this -> a = a;
+            this -> oper = oper;
+            break;
     }
-    return temp;
 }
 
 int main(int argc, char **argv)

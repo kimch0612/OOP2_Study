@@ -36,15 +36,10 @@ protected:
 };
 
 class calculator : public Adder, public Subtraction, public Division, public Quotient {
-protected:
+    int a, b;
     string oper;
 public:
-    void input()
-    {
-        cout << "계산하고자 하는 술식을 입력해주세요 (ex. 1 + 1, 5 !)\n>> ";
-        getline(cin, oper);
-    }
     int find_operator(calculator cal);
-    string rm_whitespaces(calculator cal);
+    void set_value(int flag, int a, string oper, int b);
 };
 #endif
