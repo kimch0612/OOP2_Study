@@ -57,27 +57,27 @@ public:
 
 class Cosine {
 public:
-    
+    double cosine (int a) { return std::cos(a); }
 };
 
 class Tangent {
 public:
-    
+    double tangent (int a) { return std::tan(angle); }
 };
 
 class Arscine {
 public:
-    
+    double arscine (int a) { return std::asin(value); }
 };
 
 class arccosine {
 public:
-    
+    double arccosine (int a) { return std::acos(a); }
 };
 
 class arctangent {
 public:
-    
+    double arctangent (int a) { return std::atan(a); }
 };
 
 class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial, public Power {
