@@ -31,13 +31,12 @@ public:
 
 class Factorial {
 public:
+    int result = 1;
     int factorial(int a)
     {
-        int temp = 1;
-        for (int i=0; i<a; i++)
-            temp += a*i;
+        for (int i=1; i <= a; i++) result *= i;
+        return result;
     }
-    int fact(int a) { return 0; }
 };
 
 class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial {
