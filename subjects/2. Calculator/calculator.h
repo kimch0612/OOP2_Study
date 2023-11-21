@@ -7,33 +7,33 @@ using namespace std;
 
 class Adder {
 public:
-    int add(int a, int b) { return a + b; }
+    int add(float a, float b) { return a + b; }
 };
 
 class Subtraction {
 public:
-    int sub(int a, int b) { return a - b; }
+    int sub(float a, float b) { return a - b; }
 };
 
 class Multiplication {
 public:
-    int multi(int a, int b) { return a * b; }
+    float multi(float a, float b) { return a * b; }
 };
 
 class Division {
 public:
-    float div(int a, int b) { return a / b; }
+    float div(float a, float b) { return a / b; }
 };
 
 class Quotient {
 public:
-    int quot(int a, int b) { return a % b; }
+    float quot(float a, float b) { return a % b; }
 };
 
 class Factorial {
 public:
     int result = 1;
-    int factorial(int a)
+    double factorial(int a)
     {
         for (int i=1; i <= a; i++) result *= i;
         return result;
@@ -42,12 +42,12 @@ public:
 
 class Power {
 public:
-    double pow(int a, int b) { return std::pow(a, b); }
+    double pow(float a, float b) { return std::pow(a, b); }
 };
 
 class Logarithm {
 public:
-    double logarithm(int a, int b) { return std::log(b) / std::log(a); }
+    double logarithm(float a, float b) { return std::log(b) / std::log(a); }
 };
 
 class Sine {
