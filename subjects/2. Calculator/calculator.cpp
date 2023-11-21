@@ -36,17 +36,36 @@ void calculator:: set_value(int flag, int a, string oper, int b)
 int main(int argc, char **argv)
 {
     int result;
+    string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !";
     calculator hand_calculator;
     switch(argc)
     {
         case 3:
-            cout << "n !" << endl; 
+            hand_calculator.set_value(1, stoi(argv[1]), argv[2], 0);
+            cout << hand_calculator.a << hand_calculator.oper << "=";
             break;
         case 4:
-            cout << "n + n" << endl;
-            result = hand_calculator.add(hand_calculator.a, hand_calculator.b);
+            hand_calculator.set_value(0, stoi(argv[1]), argv[2], stoi(argv[3]));
+            cout << hand_calculator.a << hand_calculator.oper << hand_calculator.b << "=";
             break;
         default:
-            cout << "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !" << endl; break;
+            cout << err << endl; break;
+    }
+    switch (hand_calculator.find_operator(hand_calculator))
+    {
+        case 1:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        case 2:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        case 3:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        case 4:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        case 5:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        case 6:
+            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+        default:
+            cout << err << endl; break;
     }
 }
