@@ -36,7 +36,7 @@ void calculator:: set_value(int flag, int a, string oper, int b)
 int main(int argc, char **argv)
 {
     int result;
-    string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !";
+    string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !\n사용 가능한 술식: + - x / % !";
     calculator hand_calculator;
     switch(argc)
     {
