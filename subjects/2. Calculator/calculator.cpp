@@ -14,6 +14,13 @@ int calculator:: find_operator(calculator cal)
     else if (cal.oper.find("%") != std::string::npos) flag = 5;
     else if (cal.oper.find("!") != std::string::npos) flag = 6;
     else if (cal.oper.find("^") != std::string::npos) flag = 7;
+    else if (cal.oper.find("l") != std::string::npos) flag = 8;
+    else if (cal.oper.find("s") != std::string::npos) flag = 9;
+    else if (cal.oper.find("c") != std::string::npos) flag = 10;
+    else if (cal.oper.find("t") != std::string::npos) flag = 11;
+    else if (cal.oper.find("a") != std::string::npos) flag = 12;
+    else if (cal.oper.find("b") != std::string::npos) flag = 13;
+    else if (cal.oper.find("r") != std::string::npos) flag = 14;
     else flag = -1;
     return flag;
 }
@@ -70,6 +77,20 @@ int main(int argc, char **argv)
             cout << hc.factorial(hc.a) << endl; break;
         case 7:
              cout << hc.pow(hc.a, hc.b) << endl; break;
+        case 8:
+            cout << hc.logarithm(hc.a, hc.b) << endl; break;
+        case 9:
+            cout << hc.sine(hc.a) << endl; break;
+        case 10:
+            cout << hc.cosine(hc.a) << endl; break;
+        case 11:
+            cout << hc.tangent(hc.a) << endl; break;
+        case 12:
+            cout << hc.arscine(hc.a) << endl; break;
+        case 13:
+            cout << hc.arccosine(hc.a) << endl; break;
+        case 14:
+            cout << hc.squareroot(hc.a) << endl; break;
         default:
             cout << err << endl; return 0;
     }
