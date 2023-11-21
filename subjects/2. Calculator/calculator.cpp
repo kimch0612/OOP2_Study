@@ -49,23 +49,23 @@ int main(int argc, char **argv)
             cout << hand_calculator.a << hand_calculator.oper << hand_calculator.b << "=";
             break;
         default:
-            cout << err << endl; break;
+            cout << err << endl; return 0;
     }
     switch (hand_calculator.find_operator(hand_calculator))
     {
         case 1:
             cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
         case 2:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hand_calculator.sub(hand_calculator.a, hand_calculator.b) << endl; break;
         case 3:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hand_calculator.multi(hand_calculator.a, hand_calculator.b) << endl; break;
         case 4:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hand_calculator.div(hand_calculator.a, hand_calculator.b) << endl; break;
         case 5:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hand_calculator.quot(hand_calculator.a, hand_calculator.b) << endl; break;
         case 6:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hand_calculator.factorial(hand_calculator.a) << endl; break;
         default:
-            cout << err << endl; break;
+            cout << err << endl; return 0;
     }
 }

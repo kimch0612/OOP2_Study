@@ -14,9 +14,14 @@ public:
     int sub(int a, int b) { return a - b; }
 };
 
+class Multiplication {
+public:
+    int multi(int a, int b) { return a * b; }
+};
+
 class Division {
 public:
-    int div(int a, int b) { return a / b; }
+    float div(int a, int b) { return a / b; }
 };
 
 class Quotient {
@@ -35,7 +40,7 @@ public:
     int fact(int a) { return 0; }
 };
 
-class calculator : public Adder, public Subtraction, public Division, public Quotient {
+class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial {
 public:
     int a, b;
     string oper;
