@@ -60,7 +60,7 @@ int main(int argc, char **argv)
         case 3:
             cout << hc.multi(hc.a, hc.b) << endl; break;
         case 4:
-            if (hc.b == 0) cout << "0 (Division Err)" << endl;
+            if (hc.b == 0) cout << "Unable to calculate (Division Err)" << endl;
             else cout << hc.div(hc.a, hc.b) << endl;
             break;
         case 5:
