@@ -1,6 +1,7 @@
 /*
 20102056 김창환 - 객체지향프로그래밍2 기말 대체 과제
 빌드 및 실행 방법: Unix 또는 Linux 환경의 Terminal에서 g++ *.cpp && ./a.out [operator] 명령어 입력.
+인자로 계산할 식을 입력받아 argc의 크기를 확인하고, 크기에 맞는 계산 과정을 거쳐 산출물을 출력합니다.
 */
 #include "calculator.h"
 
@@ -44,7 +45,7 @@ void calculator:: set_value(int flag, int a, string oper, int b)
 int main(int argc, char **argv)
 {
     int result;
-    string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !\n사용 가능한 술식: + - x / % !";
+    string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !\n사용 가능한 술식: + - x / % ! ^ l s c t a b r";
     calculator hc;
     switch(argc)
     {
