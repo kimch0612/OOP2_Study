@@ -45,6 +45,41 @@ public:
     double pow(int a, int b) { return std::pow(a, b); }
 };
 
+class Logarithm {
+public:
+
+}
+
+class Sine {
+public:
+    
+}
+
+class Cosine {
+public:
+    
+}
+
+class Tangent {
+public:
+    
+}
+
+class Arscine {
+public:
+    
+}
+
+class arccosine {
+public:
+    
+}
+
+class arctangent {
+public:
+    
+}
+
 class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial, public Power {
 public:
     int a, b;
