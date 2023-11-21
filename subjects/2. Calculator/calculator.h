@@ -62,20 +62,20 @@ public:
 
 class Tangent {
 public:
-    double tangent (int a) { return std::tan(angle); }
+    double tangent (int a) { return std::tan(a); }
 };
 
 class Arscine {
 public:
-    double arscine (int a) { return std::asin(value); }
+    double arscine (int a) { return std::asin(a); }
 };
 
-class arccosine {
+class Arccosine {
 public:
     double arccosine (int a) { return std::acos(a); }
 };
 
-class arctangent {
+class Arctangent {
 public:
     double arctangent (int a) { return std::atan(a); }
 };
