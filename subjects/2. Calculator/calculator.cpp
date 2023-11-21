@@ -37,34 +37,36 @@ int main(int argc, char **argv)
 {
     int result;
     string err = "올바르게 다시 입력하세요.\n입력 예시: g++ *.cpp && ./a.out 1 + 1 \n g++ *.cpp && ./a.out 5 !\n사용 가능한 술식: + - x / % !";
-    calculator hand_calculator;
+    calculator hc;
     switch(argc)
     {
         case 3:
-            hand_calculator.set_value(1, stoi(argv[1]), argv[2], 0);
-            cout << hand_calculator.a << hand_calculator.oper << "=";
+            hc.set_value(1, stoi(argv[1]), argv[2], 0);
+            cout << hc.a << hc.oper << "=";
             break;
         case 4:
-            hand_calculator.set_value(0, stoi(argv[1]), argv[2], stoi(argv[3]));
-            cout << hand_calculator.a << hand_calculator.oper << hand_calculator.b << "=";
+            hc.set_value(0, stoi(argv[1]), argv[2], stoi(argv[3]));
+            cout << hc.a << hc.oper << hc.b << "=";
             break;
         default:
             cout << err << endl; return 0;
     }
-    switch (hand_calculator.find_operator(hand_calculator))
+    switch (hc.find_operator(hc))
     {
         case 1:
-            cout << hand_calculator.add(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hc.add(hc.a, hc.b) << endl; break;
         case 2:
-            cout << hand_calculator.sub(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hc.sub(hc.a, hc.b) << endl; break;
         case 3:
-            cout << hand_calculator.multi(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hc.multi(hc.a, hc.b) << endl; break;
         case 4:
-            cout << hand_calculator.div(hand_calculator.a, hand_calculator.b) << endl; break;
+            if (hc.b == 0) cout << "0 (Division Err)" << endl;
+            else cout << hc.div(hc.a, hc.b) << endl;
+            break;
         case 5:
-            cout << hand_calculator.quot(hand_calculator.a, hand_calculator.b) << endl; break;
+            cout << hc.quot(hc.a, hc.b) << endl; break;
         case 6:
-            cout << hand_calculator.factorial(hand_calculator.a) << endl; break;
+            cout << hc.factorial(hc.a) << endl; break;
         default:
             cout << err << endl; return 0;
     }
