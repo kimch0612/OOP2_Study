@@ -47,12 +47,12 @@ public:
 
 class Logarithm {
 public:
-
+    double logarithm(int a, int b) { return std::log(b) / std::log(a); }
 };
 
 class Sine {
 public:
-    
+    double sine (int a) { return std::sin(a); }
 };
 
 class Cosine {
