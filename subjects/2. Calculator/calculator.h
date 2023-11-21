@@ -83,7 +83,7 @@ public:
 class SquareRoot {
 public:
     double squareroot(int a) { return std::sqrt(a); }
-}
+};
 
 class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial, public Power, public Logarithm, public Sine, public Cosine, public Tangent, public Arscine, public Arccosine, public Arctangent, public SquareRoot {
 public:
