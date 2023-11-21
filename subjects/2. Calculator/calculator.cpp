@@ -50,11 +50,11 @@ int main(int argc, char **argv)
     switch(argc)
     {
         case 3:
-            hc.set_value(1, stoi(argv[1]), argv[2], 0);
+            hc.set_value(1, stof(argv[1]), argv[2], 0);
             cout << hc.a << hc.oper << "=";
             break;
         case 4:
-            hc.set_value(0, stoi(argv[1]), argv[2], stoi(argv[3]));
+            hc.set_value(0, stof(argv[1]), argv[2], stof(argv[3]));
             cout << hc.a << hc.oper << hc.b << "=";
             break;
         default:

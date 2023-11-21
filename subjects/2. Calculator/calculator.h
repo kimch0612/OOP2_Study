@@ -87,7 +87,7 @@ public:
 
 class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial, public Power, public Logarithm, public Sine, public Cosine, public Tangent, public Arscine, public Arccosine, public Arctangent, public SquareRoot {
 public:
-    int a, b;
+    float a, b;
     string oper;
     int find_operator(calculator cal);
     void set_value(int flag, int a, string oper, int b);
