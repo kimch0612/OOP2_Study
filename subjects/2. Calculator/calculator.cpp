@@ -13,6 +13,7 @@ int calculator:: find_operator(calculator cal)
     else if (cal.oper.find("/") != std::string::npos) flag = 4;
     else if (cal.oper.find("%") != std::string::npos) flag = 5;
     else if (cal.oper.find("!") != std::string::npos) flag = 6;
+    else if (cal.oper.find("^") != std::string::npos) flag = 7;
     else flag = -1;
     return flag;
 }
@@ -67,6 +68,8 @@ int main(int argc, char **argv)
             cout << hc.quot(hc.a, hc.b) << endl; break;
         case 6:
             cout << hc.factorial(hc.a) << endl; break;
+        case 7:
+             cout << hc.pow(hc.a, hc.b) << endl; break;
         default:
             cout << err << endl; return 0;
     }

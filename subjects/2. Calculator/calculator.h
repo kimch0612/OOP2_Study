@@ -2,6 +2,7 @@
 #define CALCULATOR_H
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Adder {
@@ -39,7 +40,12 @@ public:
     }
 };
 
-class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial {
+class Power {
+public:
+    double pow(int a, int b) { return std::pow(a, b); }
+};
+
+class calculator : public Adder, public Subtraction, public Multiplication, public Division, public Quotient, public Factorial, public Power {
 public:
     int a, b;
     string oper;
