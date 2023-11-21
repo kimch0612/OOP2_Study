@@ -27,7 +27,7 @@ public:
 
 class Quotient {
 public:
-    float quot(float a, float b) { return a % b; }
+    float quot(int a, int b) { return a % b; }
 };
 
 class Factorial {
